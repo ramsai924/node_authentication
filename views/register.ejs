@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div>
+        <ul>
+    <% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
+    
+        <li><%= error.msg %></li>
+    
+    <% }); %> <% } %>
+    </ul>
+    </div>
+    <div>
+        <% if(typeof success != 'undefined'){ %>
+        <%= success %> <a href="/login">Login</a>
+        <% } %>
+    </div>
+
+    <form action="" method="POST">
+        <div>
+            <input type="text" name="name" id="name" placeholder="name" value="<%= typeof name != 'undefined' ? name : '' %>">
+        </div>
+        <div>
+            <input type="text" name="email" id="email" placeholder="email" value="<%= typeof email != 'undefined' ? email : '' %>">
+        </div>
+        <div>
+            <input type="password" name="password" id="password" placeholder="password" value="<%= typeof password != 'undefined' ? password : '' %>">
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+        <a href="/login">login</a>
+    </form>
+</body>
+</html>
